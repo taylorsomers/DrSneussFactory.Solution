@@ -1,6 +1,6 @@
 # Dr Sneuss's Factory
 
-  ### By Taylor Somers
+  ### By [Taylor Somers](https://github.com/taylorsomers/)
 
 ## Description
 
@@ -47,7 +47,7 @@
 
   | Program Behavior | Example Behavior | Example Output | Met? (Y/N) |
   | ----------- | ----------- | ----------- | ----------- |
-  | Program will display a splash page allowing the user to navigate to a list of all Engineers employed at the factory as well as all Machines in operation at the factory. | N/A | N/A |  |
+  | Program will display a splash page allowing the user to navigate to a list of all Engineers employed at the factory as well as all Machines in operation at the factory. | N/A | N/A | Y |
   |  |  |  |  |
 
 
