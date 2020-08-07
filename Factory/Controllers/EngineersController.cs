@@ -26,5 +26,17 @@ namespace Factory.Controllers
     {
       return View();
     }
+
+    [HttpPost]
+    public ActionResult Create(Engineer engineer)
+    {
+      if(!_db.Engineers.Any(x => x.EngineerName == engineer.EngineerName))
+      {
+        _db.Engineers.Add(engineer);
+        _db.SaveChanges();
+      }
+      return RedirectToAction("Index");
+    }
+
   }
 }
