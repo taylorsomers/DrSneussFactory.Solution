@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/styles.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Dr Snuess's Factory</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <button type="button" class="btn btn-info">@Html.ActionLink("Home", "Index", "Home")</button>
+      </nav>
+      <div class="jumbotron">
+        <h1>Dr Sneuss's Factory</h1>
+
+        <h2>Internal Engineer & Machine Database</h2>
+      </div>
+    </header>
+
+    <div class="container">
+      @RenderBody()
+    </div>
+    <footer>"Dr Sneuss's Factory" is free to use under the GNU General Public License GPLv3. © 2020 Taylor Somers. All rights reserved.</footer>
+  </body>
+</html>
