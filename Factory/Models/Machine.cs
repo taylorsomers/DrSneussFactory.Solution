@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Factory.Models
@@ -14,6 +15,7 @@ namespace Factory.Models
 
     public string MachineName { get; set; }
 
+    [DisplayName("Machine Description")]
     public string MachineDescription { get; set; }
     public ICollection<EngineerMachine> Engineers { get; }
   }
