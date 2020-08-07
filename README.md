@@ -52,7 +52,10 @@
   | Program will display an "Add an Engineers" link in the Engineers index view. | N/A | "Add an Engineer" | Y |
   | When the "Add an Engineers" link on the Engineers index page is clicked, program will display an Engineers/Create view with a form to enter a new Engineer into the database. | "Add an Engineer" > *Click* | "Enter a New Engineer: Engineer Name:[Input Field]; [Button: 'Enter New Engineer']; 'View All Engineers' | Y |
   | When a new Engineer's name is inputted into the input field and the "Enter New Engineer" button is clicked in the Engineers/Create view, program will add the inputted Engineer to the list of Engineers employed at the factory. | "Engineer Name:[James Bond]; [Button: 'Enter New Engineer']" > *Click* | "All Engineers: James Bond" | Y |
-  | When an Engineer's name is clicked in the Engineers index view, program will display an Engineers/Details view for that Engineer, listing any Machines on which that Engineer is licensed to work. | "All Engineers: James Bond" > *Click* |  |  |
+  | When an Engineer's name is clicked in the Engineers index view, and if no machine licenses have been added for that engineer, program will display an Engineers/Details view with a message that no machine licenses have been added yet. | "All Engineers: James Bond" > *Click* | "Engineer Details; Engineer Name: James Bond; This engineer is not licensed to work on any machines yet." | Y |
+  | When the "Edit Engineer Info" link in the Engineers/Details view is clicked, program will display an Engineers/Edit view with a field for the user to change Engineer information. | "Edit Engineer Info" > *Click* | "Edit Engineer Info: James Bond; Engineer Name:[James Bond]; [Button: 'Save']" | Y |
+  | When the user inputs an edited Engineer Name into the input field and clicks the "Save" button in the Engineers/Edit view, program will display the Engineers/Details view with the edited Engineer Name. |  | "Edit Engineer Info: James Bond; Engineer Name:[Jimbo]; [Button: 'Save']" > *Click* | "Engineer Details; Engineer Name: Jimbo; This engineer is not licensed to work on any machines yet." | Y |
+  |  |  |  |  |
 
 
 ## Stretch Goals
