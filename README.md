@@ -48,7 +48,7 @@
   | Program Behavior | Example Behavior | Example Output | Met? (Y/N) |
   | ----------- | ----------- | ----------- | ----------- |
   | Program will display a splash page allowing the user to navigate to a list of all Engineers employed at the factory as well as all Machines in operation at the factory. | N/A | N/A | Y |
-  |  |  |  |  |
+  | When the "View All Engineers" link on the splash page is clicked and no Engineers have been created in the database, program will display an Engineers/Index view with a message that no Engineers have been added yet. | "View All Engineers" > *Click* |  |  |
 
 
 ## Stretch Goals
