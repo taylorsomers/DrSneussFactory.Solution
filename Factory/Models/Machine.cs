@@ -13,6 +13,7 @@ namespace Factory.Models
 
     public int MachineId { get; set; }
 
+    [DisplayName("Machine Name")]
     public string MachineName { get; set; }
 
     [DisplayName("Machine Description")]
