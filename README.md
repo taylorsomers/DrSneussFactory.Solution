@@ -65,6 +65,7 @@
 
 | Location : Message |  Situation  | Resolved (Y/N) |  Bug Resolution Strategy |
 | ----------- | ----------- | ----------- | ----------- |
+| Controllers\EngineersController.cs : "error CS0103: The name 'join' does not exist in the current context" | Error in terminal while attempting to add HTTPPost action for Details view in Factory/Controllers/EngineersController.cs file. | Y? | Delete '.ThenInclude(join => join.Engineer);' from Details HTTPGet action in Factory/Controllers/EngineersController.cs file. |
 
 
 
