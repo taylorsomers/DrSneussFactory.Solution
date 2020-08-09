@@ -66,5 +66,16 @@ namespace Factory.Controllers
       ViewBag.EngineerId = new SelectList(_db.Engineers, "EngineerId", "EngineerName");
       return View(thisMachine);
     }
+
+    [HttpPost]
+    public ActionResult AddMachine(Machine machine, int EngineerId)
+    {
+      if(!_db.EngineerMachine.Any(x => x.EngineerId == EngineerId && x.MachineId == machine.MachineId))
+      {
+        _db.EngineerMachine.Add(new EngineerMachine() { EngineerId = EngineerId, MachineId = machine.MachineId });
+      }
+      _db.SaveChanges();
+      return RedirectToAction("Details", new { id = machine.MachineId});
+    }
   }
 }
