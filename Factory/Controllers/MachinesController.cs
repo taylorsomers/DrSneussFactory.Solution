@@ -86,5 +86,11 @@ namespace Factory.Controllers
       _db.SaveChanges();
       return RedirectToAction("Details", new { id = joinEntry.MachineId});
     }
+
+    public ActionResult Delete(int id)
+    {
+      var thisMachine = _db.Machines.FirstOrDefault(machines => machines.MachineId == id);
+      return View(thisMachine);
+    }
   }
 }
