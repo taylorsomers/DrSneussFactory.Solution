@@ -34,13 +34,54 @@
   5.  Use a file extractor or unzip program (such as PeaZip, Unzipper, WinZip, Zipware, or 7-ZIP) to extract the ZIP files onto your computer.
   6.  In your browser, navigate to https://dotnet.microsoft.com/download/dotnet-core/thank-you/sdk-2.2.106-macos-x64-installer for Mac or https://dotnet.microsoft.com/download/dotnet-core/thank-you/sdk-2.2.203-windows-x64-installer for Windows and click the link "click here to download manually" if the download for .NET Core 2.2 SDK does not start automatically.
   7.  Double-click the downloaded .NET Core 2.2 SDK file and run the installer.
-  8.  Open your computer's terminal and navigate to the directory bearing the name of the program and containing the top level subdirectories and files.
-  9.  Enter the command "dotnet build" in the terminal.
-  10. Enter the command "dotnet run" in the terminal. The program should begin to run in the console.
+  8.  Open your computer's terminal and navigate to the "Factory" subdirectory within the "Factory.Solution" directory.
+  9.  Import the file "taylor_somers.sql" using your preferred SQL management tool.
+  10. Enter the command "dotnet build" in the terminal.
+  11. Enter the command "dotnet run" in the terminal. The program should begin to run in your browser.
 
   ### Database Setup Instructions
 
+  CREATE DATABASE  IF NOT EXISTS `taylor_somers`;
   
+  USE `taylor_somers`;
+
+  DROP TABLE IF EXISTS `__efmigrationshistory`;
+
+  CREATE TABLE `__efmigrationshistory` (
+    `MigrationId` varchar(95) NOT NULL,
+    `ProductVersion` varchar(32) NOT NULL,
+    PRIMARY KEY (`MigrationId`)
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+  DROP TABLE IF EXISTS `engineermachine`;
+
+  CREATE TABLE `engineermachine` (
+    `EngineerMachineId` int NOT NULL AUTO_INCREMENT,
+    `EngineerId` int NOT NULL,
+    `MachineId` int NOT NULL,
+    PRIMARY KEY (`EngineerMachineId`),
+    KEY `IX_EngineerMachine_EngineerId` (`EngineerId`),
+    KEY `IX_EngineerMachine_MachineId` (`MachineId`),
+    CONSTRAINT `FK_EngineerMachine_Engineers_EngineerId` FOREIGN KEY (`EngineerId`) REFERENCES `engineers` (`EngineerId`) ON DELETE CASCADE,
+    CONSTRAINT `FK_EngineerMachine_Machines_MachineId` FOREIGN KEY (`MachineId`) REFERENCES `machines` (`MachineId`) ON DELETE CASCADE
+  ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+  DROP TABLE IF EXISTS `engineers`;
+
+  CREATE TABLE `engineers` (
+    `EngineerId` int NOT NULL AUTO_INCREMENT,
+    `EngineerName` longtext,
+    PRIMARY KEY (`EngineerId`)
+  ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+  DROP TABLE IF EXISTS `machines`;
+
+  CREATE TABLE `machines` (
+    `MachineId` int NOT NULL AUTO_INCREMENT,
+    `MachineName` longtext,
+    `MachineDescription` longtext,
+    PRIMARY KEY (`MachineId`)
+  ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
 ## Specifications
@@ -60,7 +101,8 @@
   | When the "Remove Machine License" button for a Machine in the Engineers/Details view is clicked, program will remove the specific Machine with which it is associated from the list of Machines displayed for the Engineer the details for whom are displayed in the Engineers/Details view. | "Engineer Details / Engineer Name: Jimbo / Jimbo's Machine Licenses: / Buzz Drill / [Button: 'Remove Machine License']" > *Click* | "Engineer Details / Engineer Name: Jimbo / This engineer is not licensed to work on any machines yet." | Y |
   | When the "Delete Engineer" link in the Engineers/Details view is clicked, program will display an Engineers/Delete view with the option to confirm deletion of the selected Engineer or navigate back to the Engineers/Details view. | "Engineer Details / Engineer Name: Jimbo / This engineer is not licensed to work on any machines yet. / Add Machine License / Edit Engineer Info / Delete Engineer" > *Click* | "Are you sure you want to delete this engineer from the database? / Engineer Name: Jimbo / [Button: 'Delete'] / View Engineer Details" | Y |
   | When the "Delete" button in the Engineers/Delete view is clicked, program will display the Engineers/Index view with the selected Engineer removed from the list of Engineers in the database. | "Are you sure you want to delete this engineer from the database? / Engineer Name: Jimbo / [Button: 'Delete']" > *Click* | All Engineers: / No engineers have been entered into the database. / Add a New Engineer" | Y |
-  | When the "View All Machines" link on the splash page is clicked and no Machines have been created in the database, program will display a Machines/Index view with a message that no Machines have been added yet. | "View All Machines" > *Click* | "All Machines: No machines have been entered into the database." |  |
+  | When the "View All Machines" link on the splash page is clicked and no Machines have been created in the database, program will display a Machines/Index view with a message that no Machines have been added yet. | "View All Machines" > *Click* | "All Machines: No machines have been entered into the database." | Y |
+  | Program will display an "Add a Machine" link in the Machines index view. | N/A | "Add a Machine" | Y |
 
 
 ## Stretch Goals
