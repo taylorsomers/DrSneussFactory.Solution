@@ -4,7 +4,7 @@
 
 ## Description
 
-  
+  This program is a demonstration of many-to-many MySQL database relationships created using C# and CSHTML in a .NET Core and MVC environment, and fully integrated with a MySQL schema. It's purpose is to create a user-friendly tracking system for a factory manager to keep track of the engineers they employ, the machines in operation, and which engineers are licensed to work on which machines. Each engineer may be licensed to work on many machines, and each machine may be worked on by many engineers, hence the many-to-many database relationship. While simple and not yet fully built out with all the possibly useful functionality, the essential features of C# and .NET development using databases are present and easily usable, and the use of many-to-many database relationships is fully demonstrated.
 
 
 ## Languages & Technologies Used:
