@@ -112,12 +112,6 @@
   | When an Engineer is selected from the "Select Engineer" dropdown list and the "Save" button in the Machines/AddEngineer view is clicked, program will display the Machines/Details view with the Engineer appended to the list of Engineers for that Machine. | "Add an Engineer for this Machine: / Buzz Drill / Select Engineer:[Jimbo]; [Button: 'Save']" > *Click* | "Machine Details / Machine Name: Jimbo / Machine Description: Drills buzzes and other stuff / Engineers: / Buzz Drill / [Button: 'Remove Machine License']" | N |
 
 
-## Stretch Goals
-| Behavior | Input | Output | Met? (Y/N) |
-| ----------- | ----------- | ----------- | ----------- |
-
-
-
 ## Known Bugs
 
 | Location : Message |  Situation  | Resolved (Y/N) |  Bug Resolution Strategy |
@@ -128,7 +122,7 @@
 
 ## Support & Contact Details
 
-  * You are welcome to contact the (author)[https://github.com/taylorsomers/] via GitHub with any concerns, feedback, possible contributions, questions, or suggestions.
+  * You are welcome to contact the [author](https://github.com/taylorsomers/) via GitHub with any concerns, feedback, possible contributions, questions, or suggestions.
 
 
 ### Contributors
